@@ -8,134 +8,173 @@
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+    <!-- HEADER TOP -->
+    <div class="header-top">
+        <div class="header-top-content">
+            <div>
+                <a href="#">Governo do Paraná</a>
+                <a href="#">Portal do Cidadão</a>
+            </div>
+            <div>
+                <a href="#">Acessibilidade</a>
+                <a href="#">Mapa do Site</a>
+            </div>
+        </div>
+    </div>
+
     <!-- HEADER -->
     <header>
         <nav>
             <div class="logo">
-                ♻️ Recicla Paraná Inteligente
+                ♻️
+                <span class="logo-text">
+                    <strong>Recicla Paraná</strong>
+                    <span style="font-size: 0.7rem; opacity: 0.9;">Inteligente</span>
+                </span>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="mapa.html">Mapa Interativo</a></li>
-                <li><a href="agendamento.html">Agendar Coleta</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="index.html">🏠 Início</a></li>
+                <li><a href="mapa.html">🗺️ Mapa Interativo</a></li>
+                <li><a href="agendamento.html">📅 Agendar Coleta</a></li>
+                <li><a href="sobre.html">ℹ️ Sobre</a></li>
+                <li><a href="contato.html">📧 Contato</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>📧 Fale Conosco</h1>
+            <p>Tem dúvidas, sugestões ou quer fazer uma parceria? Estamos aqui para ouvir você!</p>
+        </div>
+    </section>
+
     <!-- MAIN CONTENT -->
     <div class="container">
-        <h1 class="section-title mt-2">📧 Fale Conosco</h1>
-        <p style="text-align: center; margin-bottom: 2rem;">Tem dúvidas ou sugestões? Entre em contato conosco!</p>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-bottom: 3rem;">
             <!-- FORMULÁRIO -->
             <div>
-                <h2 style="color: var(--cor-primaria); margin-bottom: 1.5rem;">Envie uma Mensagem</h2>
-                <form id="formContato" onsubmit="enviarMensagem(event)">
-                    <div class="form-group">
-                        <label for="contato-nome">Nome *</label>
-                        <input type="text" id="contato-nome" name="nome" required>
-                    </div>
+                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: var(--sombra); border-top: 5px solid var(--cor-verde);">
+                    <h2 style="color: var(--cor-primaria); margin-bottom: 1.5rem;">Envie uma Mensagem</h2>
+                    <form id="formContato" onsubmit="enviarMensagem(event)">
+                        <div class="form-group">
+                            <label for="contato-nome">Nome Completo *</label>
+                            <input type="text" id="contato-nome" name="nome" required>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="contato-email">Email *</label>
-                        <input type="email" id="contato-email" name="email" required>
-                    </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label for="contato-email">Email *</label>
+                                <input type="email" id="contato-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contato-telefone">Telefone</label>
+                                <input type="tel" id="contato-telefone" name="telefone" placeholder="(41) 99999-9999">
+                            </div>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="contato-telefone">Telefone</label>
-                        <input type="tel" id="contato-telefone" name="telefone" placeholder="(41) 99999-9999">
-                    </div>
+                        <div class="form-group">
+                            <label for="contato-assunto">Assunto *</label>
+                            <select id="contato-assunto" name="assunto" required>
+                                <option value="">-- Selecione --</option>
+                                <option value="duvida">Dúvida sobre o Serviço</option>
+                                <option value="sugestao">Sugestão de Melhoria</option>
+                                <option value="reclamacao">Reclamação</option>
+                                <option value="elogio">Elogio</option>
+                                <option value="parceria">Proposta de Parceria</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="contato-assunto">Assunto *</label>
-                        <select id="contato-assunto" name="assunto" required>
-                            <option value="">-- Selecione --</option>
-                            <option value="duvida">Dúvida</option>
-                            <option value="sugestao">Sugestão</option>
-                            <option value="reclamacao">Reclamação</option>
-                            <option value="elogio">Elogio</option>
-                            <option value="parceria">Parceria</option>
-                            <option value="outro">Outro</option>
-                        </select>
-                    </div>
+                        <div class="form-group">
+                            <label for="contato-mensagem">Mensagem *</label>
+                            <textarea id="contato-mensagem" name="mensagem" required placeholder="Digite sua mensagem aqui..."></textarea>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="contato-mensagem">Mensagem *</label>
-                        <textarea id="contato-mensagem" name="mensagem" required placeholder="Digite sua mensagem aqui..."></textarea>
-                    </div>
+                        <button type="submit" class="btn btn-primary btn-block" style="font-size: 1.05rem; padding: 1rem;">✉️ Enviar Mensagem</button>
+                    </form>
 
-                    <button type="submit" class="btn btn-primary btn-block">Enviar Mensagem</button>
-                </form>
-
-                <div id="mensagemContato" style="display: none; margin-top: 1.5rem;"></div>
+                    <div id="mensagemContato" style="display: none; margin-top: 1.5rem;"></div>
+                </div>
             </div>
 
             <!-- INFORMAÇÕES -->
             <div>
                 <h2 style="color: var(--cor-primaria); margin-bottom: 1.5rem;">Informações de Contato</h2>
 
-                <div style="background: white; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                    <h3 style="color: var(--cor-primaria); margin-bottom: 0.5rem;">📧 Email</h3>
-                    <p><a href="mailto:contato@reciclparana.gov.br">contato@reciclaparana.gov.br</a></p>
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; box-shadow: var(--sombra); border-top: 4px solid var(--cor-verde);">
+                    <h4 style="color: var(--cor-primaria); margin-bottom: 0.75rem;">📧 Email</h4>
+                    <p><a href="mailto:contato@reciclaparana.gov.br" style="color: var(--cor-verde); text-decoration: none; font-weight: 600;">contato@reciclaparana.gov.br</a></p>
                 </div>
 
-                <div style="background: white; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                    <h3 style="color: var(--cor-primaria); margin-bottom: 0.5rem;">📞 Telefone</h3>
-                    <p><a href="tel:+554133334444">(41) 3333-4444</a></p>
-                    <p style="font-size: 0.9rem; color: var(--cor-cinza);">Seg-Sex: 08h-17h</p>
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; box-shadow: var(--sombra); border-top: 4px solid var(--cor-primaria);">
+                    <h4 style="color: var(--cor-primaria); margin-bottom: 0.75rem;">📞 Telefone</h4>
+                    <p><a href="tel:+554133334444" style="color: var(--cor-verde); text-decoration: none; font-weight: 600;">(41) 3333-4444</a></p>
+                    <p style="font-size: 0.85rem; color: var(--cor-texto-claro); margin-top: 0.5rem;">Seg-Sex: 08h às 17h</p>
                 </div>
 
-                <div style="background: white; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                    <h3 style="color: var(--cor-primaria); margin-bottom: 0.5rem;">📱 WhatsApp</h3>
-                    <p><a href="https://wa.me/5541999999999" target="_blank">(41) 99999-9999</a></p>
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; box-shadow: var(--sombra); border-top: 4px solid var(--cor-ouro);">
+                    <h4 style="color: var(--cor-primaria); margin-bottom: 0.75rem;">📱 WhatsApp</h4>
+                    <p><a href="https://wa.me/5541999999999" target="_blank" style="color: var(--cor-verde); text-decoration: none; font-weight: 600;">(41) 99999-9999</a></p>
                 </div>
 
-                <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                    <h3 style="color: var(--cor-primaria); margin-bottom: 0.5rem;">📍 Endereço</h3>
-                    <p>Secretaria do Meio Ambiente<br>
-                    Av. Brasil, 1000<br>
-                    Centro - Curitiba, PR<br>
-                    CEP: 80000-000</p>
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: var(--sombra); border-top: 4px solid var(--cor-verde-escuro);">
+                    <h4 style="color: var(--cor-primaria); margin-bottom: 0.75rem;">📍 Endereço</h4>
+                    <p style="color: var(--cor-texto-claro); line-height: 1.8;">
+                        Secretaria de Estado do Meio Ambiente<br>
+                        Av. Brasil, 1000<br>
+                        Centro - Curitiba, PR<br>
+                        <strong>CEP: 80000-000</strong>
+                    </p>
                 </div>
             </div>
         </div>
 
         <!-- REDES SOCIAIS -->
-        <section style="text-align: center; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-            <h2 style="color: var(--cor-primaria); margin-bottom: 1rem;">Siga-nos nas Redes Sociais</h2>
+        <section style="background: white; padding: 2rem; border-radius: 8px; box-shadow: var(--sombra); border-top: 5px solid var(--cor-verde); text-align: center; margin-bottom: 3rem;">
+            <h2 style="color: var(--cor-primaria); margin-bottom: 1.5rem;">Siga-nos nas Redes Sociais</h2>
+            <p style="color: var(--cor-texto-claro); margin-bottom: 1.5rem;">Acompanhe as novidades, dicas de reciclagem e eventos</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="#" class="btn btn-primary">Facebook</a>
-                <a href="#" class="btn btn-primary">Instagram</a>
-                <a href="#" class="btn btn-primary">Twitter</a>
-                <a href="#" class="btn btn-primary">YouTube</a>
+                <a href="https://facebook.com" target="_blank" class="btn btn-primary">👍 Facebook</a>
+                <a href="https://instagram.com" target="_blank" class="btn btn-secondary">📸 Instagram</a>
+                <a href="https://twitter.com" target="_blank" class="btn btn-primary">𝕏 Twitter</a>
+                <a href="https://youtube.com" target="_blank" class="btn btn-secondary">▶️ YouTube</a>
             </div>
         </section>
 
         <!-- FAQ -->
-        <section style="margin-top: 3rem;">
+        <section>
             <h2 class="section-title">❓ Perguntas Frequentes</h2>
             <div style="display: grid; gap: 1rem;">
-                <details style="background: white; padding: 1rem; border-radius: 10px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                    <summary style="color: var(--cor-primaria); font-weight: bold;">Como faço para agendar coleta em casa?</summary>
-                    <p style="margin-top: 1rem;">Acesse a página "Agendar Coleta" e preencha o formulário com seus dados. Você receberá confirmação por email e SMS.</p>
+                <details style="background: white; padding: 1.5rem; border-radius: 8px; cursor: pointer; box-shadow: var(--sombra); border-left: 5px solid var(--cor-verde);">
+                    <summary style="color: var(--cor-primaria); font-weight: 600; font-size: 1.05rem;">Como faço para agendar coleta em casa?</summary>
+                    <p style="margin-top: 1rem; color: var(--cor-texto-claro);">Acesse a página "Agendar Coleta", preencha o formulário com seus dados, selecione a data e horário preferido. Você receberá confirmação por email e SMS.</p>
                 </details>
 
-                <details style="background: white; padding: 1rem; border-radius: 10px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                    <summary style="color: var(--cor-primaria); font-weight: bold;">Quais materiais são aceitos?</summary>
-                    <p style="margin-top: 1rem;">Vidro, Plástico, Papel, Metal, Eletrônicos e Orgânicos. Cada ponto tem suas especificidades.</p>
+                <details style="background: white; padding: 1.5rem; border-radius: 8px; cursor: pointer; box-shadow: var(--sombra); border-left: 5px solid var(--cor-primaria);">
+                    <summary style="color: var(--cor-primaria); font-weight: 600; font-size: 1.05rem;">Quais materiais são aceitos?</summary>
+                    <p style="margin-top: 1rem; color: var(--cor-texto-claro);">Vidro, Plástico, Papel, Metal, Eletrônicos e Orgânicos. Visite o mapa interativo para conhecer os pontos perto de você e quais materiais cada um aceita.</p>
                 </details>
 
-                <details style="background: white; padding: 1rem; border-radius: 10px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                    <summary style="color: var(--cor-primaria); font-weight: bold;">Há algum custo para usar o serviço?</summary>
-                    <p style="margin-top: 1rem;">Não! O serviço é totalmente gratuito. Estamos aqui para incentivar a sustentabilidade.</p>
+                <details style="background: white; padding: 1.5rem; border-radius: 8px; cursor: pointer; box-shadow: var(--sombra); border-left: 5px solid var(--cor-ouro);">
+                    <summary style="color: var(--cor-primaria); font-weight: 600; font-size: 1.05rem;">Há algum custo para usar o serviço?</summary>
+                    <p style="margin-top: 1rem; color: var(--cor-texto-claro);">Não! O serviço é totalmente gratuito. Estamos aqui para incentivar a sustentabilidade e facilitar a reciclagem para todos.</p>
                 </details>
 
-                <details style="background: white; padding: 1rem; border-radius: 10px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                    <summary style="color: var(--cor-primaria); font-weight: bold;">Como ganho pontos?</summary>
-                    <p style="margin-top: 1rem;">Cada coleta realizada equivale a pontos que podem ser trocados por prêmios e descontos.</p>
+                <details style="background: white; padding: 1.5rem; border-radius: 8px; cursor: pointer; box-shadow: var(--sombra); border-left: 5px solid var(--cor-verde-escuro);">
+                    <summary style="color: var(--cor-primaria); font-weight: 600; font-size: 1.05rem;">Como ganho pontos?</summary>
+                    <p style="margin-top: 1rem; color: var(--cor-texto-claro);">Cada coleta realizada equivale a pontos que podem ser trocados por prêmios, descontos em estabelecimentos parceiros e certificados.</p>
+                </details>
+
+                <details style="background: white; padding: 1.5rem; border-radius: 8px; cursor: pointer; box-shadow: var(--sombra); border-left: 5px solid var(--cor-primaria);">
+                    <summary style="color: var(--cor-primaria); font-weight: 600; font-size: 1.05rem;">Posso sugerir um novo ponto de coleta?</summary>
+                    <p style="margin-top: 1rem; color: var(--cor-texto-claro);">Sim! Use o formulário selecionando "Sugestão de Melhoria". Adoraríamos receber sugestões para expandir nossa cobertura.</p>
+                </details>
+
+                <details style="background: white; padding: 1.5rem; border-radius: 8px; cursor: pointer; box-shadow: var(--sombra); border-left: 5px solid var(--cor-ouro);">
+                    <summary style="color: var(--cor-primaria); font-weight: 600; font-size: 1.05rem;">Minha empresa pode ser parceira?</summary>
+                    <p style="margin-top: 1rem; color: var(--cor-texto-claro);">Definitivamente! Use o formulário com "Proposta de Parceria" e detalhe sua ideia. Responderemos em breve!</p>
                 </details>
             </div>
         </section>
@@ -143,8 +182,36 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2024 Recicla Paraná Inteligente - Sustentabilidade com Tecnologia</p>
-        <p><a href="contato.html">Contato</a> | <a href="#">Privacidade</a> | <a href="#">Termos</a></p>
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; text-align: left;">
+                <div>
+                    <h4 style="margin-bottom: 1rem;">🌐 Navegação</h4>
+                    <p><a href="index.html">Início</a></p>
+                    <p><a href="mapa.html">Mapa Interativo</a></p>
+                    <p><a href="agendamento.html">Agendar Coleta</a></p>
+                    <p><a href="sobre.html">Sobre</a></p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">📞 Contato</h4>
+                    <p>📧 contato@reciclaparana.gov.br</p>
+                    <p>☎️ (41) 3333-4444</p>
+                    <p>📱 (41) 99999-9999</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">🔗 Redes Sociais</h4>
+                    <p><a href="https://facebook.com" target="_blank">Facebook</a></p>
+                    <p><a href="https://instagram.com" target="_blank">Instagram</a></p>
+                    <p><a href="https://twitter.com" target="_blank">Twitter</a></p>
+                </div>
+            </div>
+            <hr style="margin: 2rem 0; opacity: 0.3;">
+            <p style="text-align: center; margin-bottom: 0.5rem;">
+                &copy; 2024 <strong>Recicla Paraná Inteligente</strong> - Sustentabilidade com Tecnologia
+            </p>
+            <p style="text-align: center; font-size: 0.9rem; opacity: 0.9;">
+                Uma iniciativa do Governo do Paraná | <a href="#">Privacidade</a> | <a href="#">Termos</a> | <a href="contato.html">Contato</a>
+            </p>
+        </div>
     </footer>
 
     <script>
@@ -156,7 +223,7 @@
             const assunto = document.getElementById('contato-assunto').value;
             const mensagem = document.getElementById('contato-mensagem').value;
 
-            // Salvar mensagem
+            // Salvar mensagem no localStorage
             let mensagens = JSON.parse(localStorage.getItem('mensagens') || '[]');
             mensagens.push({
                 id: Date.now(),
@@ -173,13 +240,18 @@
             msgDiv.innerHTML = `
                 <div class="alert alert-success">
                     <h3>✅ Mensagem Enviada com Sucesso!</h3>
-                    <p>Obrigado por entrar em contato. Responderemos em breve!</p>
+                    <p>Obrigado por entrar em contato. Responderemos sua mensagem em breve no email <strong>${email}</strong>.</p>
                 </div>
             `;
             msgDiv.style.display = 'block';
 
             // Limpar formulário
             document.getElementById('formContato').reset();
+
+            // Scroll para mensagem
+            setTimeout(() => {
+                msgDiv.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
         }
     </script>
 </body>
