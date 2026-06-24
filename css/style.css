@@ -1,0 +1,575 @@
+/* ============================================
+   ESTILOS - IDENTIDADE VISUAL GOVERNO PARANÁ
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Cores Governo Paraná */
+  --cor-primaria: #003366;      /* Azul Paraná (oficial) */
+  --cor-secundaria: #004d99;    /* Azul mais claro */
+  --cor-verde: #2ecc71;         /* Verde sustentabilidade */
+  --cor-verde-escuro: #27ae60;  /* Verde escuro */
+  --cor-ouro: #f39c12;          /* Ouro destaque */
+  --cor-texto: #333333;
+  --cor-texto-claro: #666666;
+  --cor-fundo: #f5f5f5;
+  --cor-branco: #ffffff;
+  --cor-cinza: #95a5a6;
+  --cor-erro: #e74c3c;
+  --cor-sucesso: #27ae60;
+  --sombra: 0 2px 8px rgba(0, 0, 0, 0.12);
+  --sombra-elevada: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Verdana, sans-serif;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  line-height: 1.6;
+}
+
+/* ============================================
+   HEADER / NAVEGAÇÃO - ESTILO GOVERNO
+   ============================================ */
+
+header {
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+  box-shadow: var(--sombra-elevada);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-top {
+  background-color: #002244;
+  padding: 0.75rem 0;
+  font-size: 0.85rem;
+  border-bottom: 3px solid var(--cor-verde);
+}
+
+.header-top-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-top a {
+  color: var(--cor-branco);
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+.header-top a:hover {
+  color: var(--cor-verde);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  color: var(--cor-branco);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+  color: var(--cor-verde);
+  border-bottom-color: var(--cor-verde);
+}
+
+/* ============================================
+   HERO SECTION - GOVERNO
+   ============================================ */
+
+.hero {
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+  color: var(--cor-branco);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-bottom: 4px solid var(--cor-verde);
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   CONTAINER
+   ============================================ */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ============================================
+   SEÇÕES
+   ============================================ */
+
+section {
+  padding: 3rem 0;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--cor-primaria);
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cor-verde), var(--cor-ouro));
+  border-radius: 2px;
+}
+
+/* ============================================
+   CARDS - GOVERNO
+   ============================================ */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background: var(--cor-branco);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--sombra);
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--cor-verde);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-elevada);
+  border-top-color: var(--cor-ouro);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.card h3 {
+  color: var(--cor-primaria);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.card p {
+  color: var(--cor-texto-claro);
+  line-height: 1.7;
+}
+
+/* ============================================
+   FORMULÁRIOS
+   ============================================ */
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: var(--cor-primaria);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.85rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s;
+  background-color: var(--cor-branco);
+  color: var(--cor-texto);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--cor-verde);
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.1);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+/* ============================================
+   BOTÕES - GOVERNO
+   ============================================ */
+
+.btn {
+  padding: 0.85rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: 0.5px;
+  box-shadow: var(--sombra);
+}
+
+.btn-primary {
+  background-color: var(--cor-verde);
+  color: var(--cor-branco);
+}
+
+.btn-primary:hover {
+  background-color: var(--cor-verde-escuro);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-elevada);
+}
+
+.btn-secondary {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+}
+
+.btn-secondary:hover {
+  background-color: var(--cor-secundaria);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-elevada);
+}
+
+.btn-block {
+  width: 100%;
+  display: block;
+}
+
+/* ============================================
+   MAPA
+   ============================================ */
+
+#map {
+  height: 500px;
+  border-radius: 8px;
+  box-shadow: var(--sombra-elevada);
+  margin: 2rem 0;
+  border: 2px solid #e0e0e0;
+}
+
+.map-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.map-filters select {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* ============================================
+   PONTOS DE COLETA
+   ============================================ */
+
+.ponto-coleta {
+  background: var(--cor-branco);
+  border-left: 5px solid var(--cor-verde);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  box-shadow: var(--sombra);
+  transition: all 0.3s;
+}
+
+.ponto-coleta:hover {
+  box-shadow: var(--sombra-elevada);
+  transform: translateX(5px);
+}
+
+.ponto-coleta h3 {
+  color: var(--cor-primaria);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.ponto-coleta p {
+  margin-bottom: 0.5rem;
+  color: var(--cor-texto-claro);
+  font-size: 0.95rem;
+}
+
+.materiais {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background-color: var(--cor-verde);
+  color: var(--cor-branco);
+  padding: 0.4rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* ============================================
+   AGENDAMENTOS
+   ============================================ */
+
+.agendamento-form {
+  background: var(--cor-branco);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: var(--sombra-elevada);
+  border-top: 5px solid var(--cor-verde);
+}
+
+.agendamento-item {
+  background: var(--cor-branco);
+  border: 2px solid var(--cor-verde);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+  box-shadow: var(--sombra);
+}
+
+.status-badge {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-confirmado {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-pendente {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-cancelado {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* ============================================
+   FOOTER - GOVERNO
+   ============================================ */
+
+footer {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+  text-align: center;
+  padding: 2.5rem;
+  margin-top: 3rem;
+  border-top: 4px solid var(--cor-verde);
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: var(--cor-verde);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   ALERTAS
+   ============================================ */
+
+.alert {
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  border-left: 5px solid;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border-left-color: var(--cor-verde);
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-left-color: var(--cor-erro);
+}
+
+.alert-info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border-left-color: var(--cor-primaria);
+}
+
+.alert h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   UTILITÁRIOS
+   ============================================ */
+
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 3rem; }
+
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-3 { margin-bottom: 3rem; }
+
+.hidden {
+  display: none !important;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--cor-cinza);
+}
+
+.spinner {
+  border: 4px solid var(--cor-fundo);
+  border-top: 4px solid var(--cor-verde);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ============================================
+   SEPARADOR / LINHA
+   ============================================ */
+
+hr {
+  border: none;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cor-verde), var(--cor-ouro));
+  margin: 2rem 0;
+}
+
+/* ============================================
+   DESTAQUES / BADGES
+   ============================================ */
+
+.destaque {
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(243, 156, 18, 0.1) 100%);
+  border-left: 4px solid var(--cor-verde);
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+}
