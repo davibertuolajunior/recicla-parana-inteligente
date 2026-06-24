@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📧 Contato - Recicla Paraná Inteligente</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <div class="logo">
+                ♻️ Recicla Paraná Inteligente
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="mapa.html">Mapa Interativo</a></li>
+                <li><a href="agendamento.html">Agendar Coleta</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <h1 class="section-title mt-2">📧 Fale Conosco</h1>
+        <p style="text-align: center; margin-bottom: 2rem;">Tem dúvidas ou sugestões? Entre em contato conosco!</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+            <!-- FORMULÁRIO -->
+            <div>
+                <h2 style="color: var(--cor-primaria); margin-bottom: 1.5rem;">Envie uma Mensagem</h2>
+                <form id="formContato" onsubmit="enviarMensagem(event)">
+                    <div class="form-group">
+                        <label for="contato-nome">Nome *</label>
+                        <input type="text" id="contato-nome" name="nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contato-email">Email *</label>
+                        <input type="email" id="contato-email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contato-telefone">Telefone</label>
+                        <input type="tel" id="contato-telefone" name="telefone" placeholder="(41) 99999-9999">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contato-assunto">Assunto *</label>
+                        <select id="contato-assunto" name="assunto" required>
+                            <option value="">-- Selecione --</option>
+                            <option value="duvida">Dúvida</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="reclamacao">Reclamação</option>
+                            <option value="elogio">Elogio</option>
+                            <option value="parceria">Parceria</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contato-mensagem">Mensagem *</label>
+                        <textarea id="contato-mensagem" name="mensagem" required placeholder="Digite sua mensagem aqui..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Enviar Mensagem</button>
+                </form>
+
+                <div id="mensagemContato" style="display: none; margin-top: 1.5rem;"></div>
+            </div>
+
+            <!-- INFORMAÇÕES -->
+            <div>
+                <h2 style="color: var(--cor-primaria); margin-bottom: 1.5rem;">Informações de Contato</h2>
+
+                <div style="background: white; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <h3 style="color: var(--cor-primaria); margin-bottom: 0.5rem;">📧 Email</h3>
+                    <p><a href="mailto:contato@reciclparana.gov.br">contato@reciclaparana.gov.br</a></p>
+                </div>
+
+                <div style="background: white; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <h3 style="color: var(--cor-primaria); margin-bottom: 0.5rem;">📞 Telefone</h3>
+                    <p><a href="tel:+554133334444">(41) 3333-4444</a></p>
+                    <p style="font-size: 0.9rem; color: var(--cor-cinza);">Seg-Sex: 08h-17h</p>
+                </div>
+
+                <div style="background: white; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <h3 style="color: var(--cor-primaria); margin-bottom: 0.5rem;">📱 WhatsApp</h3>
+                    <p><a href="https://wa.me/5541999999999" target="_blank">(41) 99999-9999</a></p>
+                </div>
+
+                <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <h3 style="color: var(--cor-primaria); margin-bottom: 0.5rem;">📍 Endereço</h3>
+                    <p>Secretaria do Meio Ambiente<br>
+                    Av. Brasil, 1000<br>
+                    Centro - Curitiba, PR<br>
+                    CEP: 80000-000</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- REDES SOCIAIS -->
+        <section style="text-align: center; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            <h2 style="color: var(--cor-primaria); margin-bottom: 1rem;">Siga-nos nas Redes Sociais</h2>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#" class="btn btn-primary">Facebook</a>
+                <a href="#" class="btn btn-primary">Instagram</a>
+                <a href="#" class="btn btn-primary">Twitter</a>
+                <a href="#" class="btn btn-primary">YouTube</a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section style="margin-top: 3rem;">
+            <h2 class="section-title">❓ Perguntas Frequentes</h2>
+            <div style="display: grid; gap: 1rem;">
+                <details style="background: white; padding: 1rem; border-radius: 10px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <summary style="color: var(--cor-primaria); font-weight: bold;">Como faço para agendar coleta em casa?</summary>
+                    <p style="margin-top: 1rem;">Acesse a página "Agendar Coleta" e preencha o formulário com seus dados. Você receberá confirmação por email e SMS.</p>
+                </details>
+
+                <details style="background: white; padding: 1rem; border-radius: 10px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <summary style="color: var(--cor-primaria); font-weight: bold;">Quais materiais são aceitos?</summary>
+                    <p style="margin-top: 1rem;">Vidro, Plástico, Papel, Metal, Eletrônicos e Orgânicos. Cada ponto tem suas especificidades.</p>
+                </details>
+
+                <details style="background: white; padding: 1rem; border-radius: 10px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <summary style="color: var(--cor-primaria); font-weight: bold;">Há algum custo para usar o serviço?</summary>
+                    <p style="margin-top: 1rem;">Não! O serviço é totalmente gratuito. Estamos aqui para incentivar a sustentabilidade.</p>
+                </details>
+
+                <details style="background: white; padding: 1rem; border-radius: 10px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <summary style="color: var(--cor-primaria); font-weight: bold;">Como ganho pontos?</summary>
+                    <p style="margin-top: 1rem;">Cada coleta realizada equivale a pontos que podem ser trocados por prêmios e descontos.</p>
+                </details>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Recicla Paraná Inteligente - Sustentabilidade com Tecnologia</p>
+        <p><a href="contato.html">Contato</a> | <a href="#">Privacidade</a> | <a href="#">Termos</a></p>
+    </footer>
+
+    <script>
+        function enviarMensagem(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('contato-nome').value;
+            const email = document.getElementById('contato-email').value;
+            const assunto = document.getElementById('contato-assunto').value;
+            const mensagem = document.getElementById('contato-mensagem').value;
+
+            // Salvar mensagem
+            let mensagens = JSON.parse(localStorage.getItem('mensagens') || '[]');
+            mensagens.push({
+                id: Date.now(),
+                nome,
+                email,
+                assunto,
+                mensagem,
+                data: new Date().toISOString()
+            });
+            localStorage.setItem('mensagens', JSON.stringify(mensagens));
+
+            // Mostrar sucesso
+            const msgDiv = document.getElementById('mensagemContato');
+            msgDiv.innerHTML = `
+                <div class="alert alert-success">
+                    <h3>✅ Mensagem Enviada com Sucesso!</h3>
+                    <p>Obrigado por entrar em contato. Responderemos em breve!</p>
+                </div>
+            `;
+            msgDiv.style.display = 'block';
+
+            // Limpar formulário
+            document.getElementById('formContato').reset();
+        }
+    </script>
+</body>
+</html>
